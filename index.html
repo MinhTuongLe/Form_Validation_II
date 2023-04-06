@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="main">
+
+    <form action="" method="POST" class="form" id="register-form">
+      <h3 class="heading">Register Form</h3>
+      <p class="desc">Let's study programming! ❤️</p>
+
+      <div class="spacer"></div>
+
+      <div class="form-group">
+        <label for="fullname" class="form-label">Fullname</label>
+        <input id="fullname" name="fullname" rules="required" type="text" placeholder="VD: Le Minh Tuong"
+          class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" rules="required|email" type="text" placeholder="VD: email@domain.com"
+          class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" name="password" rules="required|min:6|max:20" type="password" placeholder="Enter your password"
+          class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password_confirmation" class="form-label">Repeat Password</label>
+        <input id="password_confirmation" rules="confirm" name="password_confirmation"
+          placeholder="Repeat your password" type="password" class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <button class="form-submit">Register</button>
+    </form>
+
+  </div>
+  <script src="./main.js"></script>
+  <script>
+    var registerForm = new Validator('#register-form');
+
+    registerForm.onSubmit = function (data) {
+      console.log(data)
+    }
+  </script>
+</body>
+
+</html>
